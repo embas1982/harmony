@@ -1,0 +1,205 @@
+/* ============================================================
+   HARMONY — Design Token System
+   Palette extracted from app screenshots
+   ============================================================ */
+
+:root {
+  /* ─── Base backgrounds ─── */
+  --color-bg-base:        #080c18;   /* deepest navy — page background */
+  --color-bg-surface:     #0f1629;   /* slightly lighter — main sections */
+  --color-bg-card:        #141e35;   /* card surfaces */
+  --color-bg-card-hover:  #1a2748;   /* card hover/active */
+  --color-bg-elevated:    #1e2f52;   /* tooltips, modals */
+
+  /* ─── Brand gradient (table headers, CTAs) ─── */
+  --gradient-brand:       linear-gradient(135deg, #5b5ef4 0%, #3b82f6 100%);
+  --gradient-brand-hover: linear-gradient(135deg, #4f52e8 0%, #2563eb 100%);
+  --gradient-hero:        linear-gradient(160deg, #0f1629 0%, #080c18 60%, #0a0f22 100%);
+
+  /* ─── Accent colours ─── */
+  --color-primary:        #6366f1;   /* indigo/purple */
+  --color-primary-light:  #818cf8;
+  --color-secondary:      #3b82f6;   /* blue */
+  --color-secondary-light:#60a5fa;
+
+  /* ─── Therapeutic profile accents (top-border colours on profile cards) ─── */
+  --color-profile-cyan:   #22d3ee;   /* Relajación Profunda */
+  --color-profile-teal:   #2dd4bf;   /* Calma Moderada */
+  --color-profile-yellow: #facc15;   /* Activación Moderada */
+  --color-profile-pink:   #f472b6;   /* Alta Energía */
+
+  /* ─── Semantic colours ─── */
+  --color-success:        #10b981;
+  --color-warning:        #f59e0b;
+  --color-error:          #ef4444;
+  --color-info:           #38bdf8;
+
+  /* ─── Text ─── */
+  --color-text-primary:   #f0f4ff;
+  --color-text-secondary: #94a3b8;
+  --color-text-muted:     #5b6a8a;
+  --color-text-accent:    #818cf8;
+
+  /* ─── Borders & dividers ─── */
+  --color-border:         rgba(255, 255, 255, 0.08);
+  --color-border-strong:  rgba(255, 255, 255, 0.15);
+  --color-border-accent:  rgba(99, 102, 241, 0.4);
+
+  /* ─── Shadows ─── */
+  --shadow-card:          0 4px 24px rgba(0, 0, 0, 0.4);
+  --shadow-card-hover:    0 8px 40px rgba(99, 102, 241, 0.2);
+  --shadow-glow-primary:  0 0 20px rgba(99, 102, 241, 0.35);
+  --shadow-glow-cyan:     0 0 20px rgba(34, 211, 238, 0.25);
+
+  /* ─── Spacing scale ─── */
+  --space-1:  0.25rem;
+  --space-2:  0.5rem;
+  --space-3:  0.75rem;
+  --space-4:  1rem;
+  --space-5:  1.25rem;
+  --space-6:  1.5rem;
+  --space-8:  2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+
+  /* ─── Border radius ─── */
+  --radius-sm:   6px;
+  --radius-md:   10px;
+  --radius-lg:   16px;
+  --radius-xl:   24px;
+  --radius-full: 9999px;
+
+  /* ─── Typography ─── */
+  --font-family:       'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-size-xs:      0.75rem;
+  --font-size-sm:      0.875rem;
+  --font-size-base:    1rem;
+  --font-size-lg:      1.125rem;
+  --font-size-xl:      1.25rem;
+  --font-size-2xl:     1.5rem;
+  --font-size-3xl:     1.875rem;
+  --font-size-4xl:     2.25rem;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semi:   600;
+  --font-weight-bold:   700;
+  --font-weight-black:  800;
+  --line-height-tight:  1.2;
+  --line-height-normal: 1.5;
+  --line-height-relaxed:1.7;
+
+  /* ─── Transitions ─── */
+  --transition-fast:   150ms ease;
+  --transition-base:   250ms ease;
+  --transition-slow:   400ms ease;
+
+  /* ─── Z-index layers ─── */
+  --z-base:    0;
+  --z-raised:  10;
+  --z-overlay: 100;
+  --z-modal:   1000;
+  --z-toast:   9999;
+}
+
+/* ─── Global resets & base ─── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-normal);
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-base);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100dvh;
+}
+
+#root {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: var(--color-secondary-light);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-text-primary);
+}
+
+button {
+  cursor: pointer;
+  font-family: var(--font-family);
+  border: none;
+  background: none;
+}
+
+img, svg {
+  display: block;
+  max-width: 100%;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-primary-light);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* ─── Scrollbar styling (webkit) ─── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg-surface);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-bg-elevated);
+  border-radius: var(--radius-full);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
+}
+
+/* ─── Utility classes ─── */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-4);
+}
+
+@media (min-width: 640px) {
+  .container { padding: 0 var(--space-6); }
+}
+
+@media (min-width: 1024px) {
+  .container { padding: 0 var(--space-8); }
+}

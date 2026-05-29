@@ -1,0 +1,75 @@
+.song-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+/* ─── Header ─── */
+.song-list__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.song-list__title-block {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.song-list__badge {
+  font-size: var(--font-size-2xl);
+  line-height: 1;
+}
+
+.song-list__title {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: -0.01em;
+}
+
+.song-list__condition {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-accent);
+  margin-top: 2px;
+}
+
+.song-list__reset-btn {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-secondary);
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  padding: var(--space-2) var(--space-4);
+  transition: color var(--transition-fast), border-color var(--transition-fast), background var(--transition-fast);
+  white-space: nowrap;
+}
+
+.song-list__reset-btn:hover {
+  color: var(--color-text-primary);
+  border-color: var(--color-border-strong);
+  background: var(--color-bg-card-hover);
+}
+
+/* ─── Items ─── */
+.song-list__items {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+/* ─── Disclaimer ─── */
+.song-list__disclaimer {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  text-align: center;
+  padding: var(--space-4) 0 var(--space-2);
+  border-top: 1px solid var(--color-border);
+  line-height: var(--line-height-relaxed);
+}
